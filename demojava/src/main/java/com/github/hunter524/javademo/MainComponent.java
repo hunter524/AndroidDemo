@@ -8,5 +8,5 @@ import dagger.Component;
 @Component(modules = {},dependencies = {})
 public interface MainComponent {
 
-    public void inject(Class T);
+    public void inject(Main main);
 }
