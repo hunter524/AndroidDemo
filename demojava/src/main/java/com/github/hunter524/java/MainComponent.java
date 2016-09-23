@@ -1,4 +1,4 @@
-package com.github.hunter524.javademo;
+package com.github.hunter524.java;
 
 import dagger.Component;
 

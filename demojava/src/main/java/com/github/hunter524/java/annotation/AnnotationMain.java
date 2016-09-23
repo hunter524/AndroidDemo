@@ -1,4 +1,4 @@
-package com.github.hunter524.javademo.annotation;
+package com.github.hunter524.java.annotation;
 
 /**
  * Created by hunter on 2016/9/18.

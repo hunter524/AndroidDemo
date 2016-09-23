@@ -20,9 +20,17 @@ android {
 }
 
 dependencies {
+    apt ('com.google.dagger:dagger-compiler:+','com.jakewharton:butterknife-compiler:8.4.0')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.google.dagger:dagger:+'
-    apt 'com.google.dagger:dagger-compiler:+'
+    compile 'com.jakewharton:butterknife:+'
+    compile 'io.reactivex:rxjava:+'
+    compile 'io.reactivex:rxandroid:+'
+    compile 'com.jakewharton.rxbinding:rxbinding:+'
+    compile 'com.squareup.retrofit2:retrofit:+'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.alibaba:fastjson:1.1.54.android'
+    compile 'com.android.support:recyclerview-v7:24.2.1'
 }

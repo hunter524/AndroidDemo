@@ -1,1 +1,1 @@
-include ':app', ':demojava'
+include ':app', ':demojava', ':groovylib'
