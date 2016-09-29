@@ -14,6 +14,26 @@ public static void main(String[] arg){
     for (i in 0..5){
         println(i)
     }
+   File.listRoots().each {
+       println(it.absolutePath)
+       new File(it.getAbsolutePath()).eachFile {
+           println(it.absolutePath)
+       }
+   }
+    new File("E:\\").eachFile {
+        println(it)
+    }
+    Runtime runtime = Runtime.getRuntime();
+    Process process = runtime.exec("E:\\gradle-2.12-all\\gradle-2.12\\bin\\gradle.bat -v")
+    println("start :"+Calendar.getInstance().getTime().toString())
+    if (process.waitFor() == 0){
+        println("end :"+Calendar.getInstance().getTime().toString())
+    }
+    BufferedInputStream bufferedInputStream = new BufferedInputStream(process.inputStream)
+    bufferedInputStream.eachLine {
+        line ->println(line)
+    }
+
 }
 int method(String arg) {
     return 1;
