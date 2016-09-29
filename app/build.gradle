@@ -20,8 +20,8 @@ android {
 }
 
 dependencies {
-    apt ('com.google.dagger:dagger-compiler:+','com.jakewharton:butterknife-compiler:8.4.0')
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    apt('com.google.dagger:dagger-compiler:+', 'com.jakewharton:butterknife-compiler:8.4.0')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.0'
     compile 'com.google.dagger:dagger:+'
@@ -33,4 +33,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.alibaba:fastjson:1.1.54.android'
     compile 'com.android.support:recyclerview-v7:24.2.1'
+    compile files('libs/tbs_sdk_thirdapp_v2.3.0.1048_36801_sharewithdownload_obfs_20160829_200437.jar')
 }
