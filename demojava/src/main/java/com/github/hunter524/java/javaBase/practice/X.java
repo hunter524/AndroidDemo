@@ -15,3 +15,12 @@ public class X {
         return x.new Y();
     }
 }
+class Y {
+    public class X {}
+    public X foo() {
+        return new X();
+    }
+    public static X createX(Y y) {
+        return y.new X();
+    }
+}
