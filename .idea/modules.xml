@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/comutillib/comutillib.iml" filepath="$PROJECT_DIR$/comutillib/comutillib.iml" />
       <module fileurl="file://$PROJECT_DIR$/demojava/demojava.iml" filepath="$PROJECT_DIR$/demojava/demojava.iml" />
       <module fileurl="file://$PROJECT_DIR$/groovylib/groovylib.iml" filepath="$PROJECT_DIR$/groovylib/groovylib.iml" />
     </modules>

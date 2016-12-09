@@ -24,6 +24,13 @@ public class RobolecricDemo {
         TextView textView = (TextView) activity.findViewById(R.id.textView);
         assertThat(textView.getText().toString(), equalTo("hello"));
     }
+    @Test
+    public void clickingLogin_shouldStartLoginActivity2() {
+        MainActivity activity = Robolectric.setupActivity(MainActivity.class);
+        activity.findViewById(R.id.button).performClick();
+        TextView textView = (TextView) activity.findViewById(R.id.textView);
+        assertThat(textView.getText().toString(), equalTo("hello"));
+    }
 
 
 }
