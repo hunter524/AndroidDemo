@@ -20,7 +20,7 @@ public class LooperMain {
         public void run() {
             super.run();
             Looper.prepare();
-            mHandler = new Handler(){
+            mHandler = new Handler(Looper.myLooper()){
                 @Override
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
