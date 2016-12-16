@@ -2,6 +2,8 @@ package com.github.hunter524.androiddemo;
 
 import android.widget.TextView;
 
+import com.github.hunter524.androiddemo.activity.MainActivity;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
