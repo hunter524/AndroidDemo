@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.github.hunter524.androiddemo.Handler.LooperMain;
 import com.github.hunter524.androiddemo.R;
 
 import butterknife.BindView;
