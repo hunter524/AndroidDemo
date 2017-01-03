@@ -1,6 +1,7 @@
 package com.github.hunter524.androiddemo.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -50,6 +51,9 @@ public class MainActivity extends Activity {
                 message1.arg1 = 2;
                 mWorkThread.mHandler.sendMessage(message1);
                 mWorkThread.mHandler.sendMessage(message2);
+                textView.setText("textView!");
+                Intent intent = new Intent("com.hexin.zhanghu.main.WelcomeActivity");
+                startActivity(intent);
                 break;
             case R.id.textView:
                 break;

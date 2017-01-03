@@ -20,12 +20,12 @@ public class LooperMain {
         public void run() {
             super.run();
             Looper.prepare();
-            mHandler = new Handler(Looper.myLooper()){
+            mHandler = new Handler(){
                 @Override
                 public void handleMessage(Message msg) {
                     super.handleMessage(msg);
                     try {
-                        Thread.sleep(1000l);
+                        Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
