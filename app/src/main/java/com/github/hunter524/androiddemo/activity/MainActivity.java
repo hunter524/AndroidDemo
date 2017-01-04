@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
+import com.github.hunter524.androiddemo.Handler.LooperMain;
 import com.github.hunter524.androiddemo.R;
 
 import butterknife.BindView;
@@ -20,8 +20,6 @@ public class MainActivity extends Activity {
 
     @BindView(R.id.button)
     Button button;
-    @BindView(R.id.textView)
-    TextView textView;
     LooperMain.WorkThread mWorkThread;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +36,7 @@ public class MainActivity extends Activity {
         mWorkThread.start();
     }
 
-    @OnClick({R.id.button, R.id.textView})
+    @OnClick({R.id.button})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -50,11 +48,8 @@ public class MainActivity extends Activity {
                 message1.arg1 = 2;
                 mWorkThread.mHandler.sendMessage(message1);
                 mWorkThread.mHandler.sendMessage(message2);
-                textView.setText("textView!");
                 Intent intent = new Intent("com.hexin.zhanghu.main.WelcomeActivity");
                 startActivity(intent);
-                break;
-            case R.id.textView:
                 break;
         }
     }
