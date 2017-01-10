@@ -4,9 +4,15 @@
 .DS_Store
 /build
 /captures
-.idea/
+/.idea/
 demojava/libs/
 groovylib/libs/
 projectFilesBackup/
 /.gitignore
 /.idea/misc.xml
+src/main/res/values-nodpi-1280x672/
+src/main/res/values-nodpi-1280x720/
+src/main/res/values-nodpi-1920x1008/
+src/main/res/values-nodpi-1920x1080/
+src/main/res/values-nodpi-2560x1440/
+src/main/res/values-nodpi-3840x2160/
