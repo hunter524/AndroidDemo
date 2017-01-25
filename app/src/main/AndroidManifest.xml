@@ -26,7 +26,12 @@
         </activity>
 
         <activity android:name="com.github.hunter524.androiddemo.activity.TencentX5Activity"></activity>
-
+        <activity android:name=".activity.SingleInstanceActivity"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".activity.SingleTaskActivity"
+            android:launchMode="singleTask">
+        </activity>
     </application>
 
 </manifest>
