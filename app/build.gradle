@@ -27,8 +27,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.1.4'
     testCompile 'org.robolectric:shadows-multidex:3.1.4'
-//    testCompile "org.robolectric:shadows-support-v4:3.1.4"
-//    testCompile "org.mockito:mockito-core:2.+"
+    //    testCompile "org.robolectric:shadows-support-v4:3.1.4"
+    //    testCompile "org.mockito:mockito-core:2.+"
     testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
     compile 'com.google.dagger:dagger:+'
     compile 'com.jakewharton:butterknife:+'
@@ -39,6 +39,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:+'
     compile 'com.alibaba:fastjson:1.1.54.android'
     compile 'com.squareup.okhttp3:okhttp:+'
-//    compile 'com.android.support:recyclerview-v7:24.2.1'
+    //    compile 'com.android.support:recyclerview-v7:24.2.1'
     //    compile files('libs/tbs_sdk_thirdapp_v2.3.0.1048_36801_sharewithdownload_obfs_20160829_200437.jar')
+    compile project(':comutillib')
 }

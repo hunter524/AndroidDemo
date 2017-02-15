@@ -7,8 +7,12 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 
-import com.github.hunter524.androiddemo.Handler.LooperMain;
+import com.github.hunter524.androiddemo.Handler.WorkHandler;
+import com.github.hunter524.androiddemo.Handler.WorkThread;
 import com.github.hunter524.androiddemo.R;
+import com.github.hunter524.util.LogUtil;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,10 +21,10 @@ import butterknife.OnClick;
 
 public class MainActivity extends Activity {
 
+    private String Tag = "MainActivity";
 
     @BindView(R.id.button)
     Button button;
-    LooperMain.WorkThread mWorkThread;
     @BindView(R.id.single_task_bt)
     Button mSingleTaskBt;
     @BindView(R.id.single_instance_bt)
@@ -28,19 +32,19 @@ public class MainActivity extends Activity {
     @BindView(R.id.Normal_bt)
     Button mNormalBt;
 
+    private WorkThread mWorkThread;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        mWorkThread = new WorkThread();
+        mWorkThread.start();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mWorkThread = new LooperMain.WorkThread();
-        mWorkThread.setName("mWorkThread");
-        mWorkThread.start();
     }
 
     @OnClick({R.id.single_task_bt, R.id.single_instance_bt, R.id.Normal_bt,R.id.button})
@@ -59,18 +63,15 @@ public class MainActivity extends Activity {
                 startActivity(intent2);
                 break;
             case R.id.button:
-                Message message1 = Message.obtain();
-                message1.what = 1;
-                message1.arg1 = 1;
-                Message message2 = Message.obtain();
-                message1.what = 2;
-                message1.arg1 = 2;
-                mWorkThread.mHandler.sendMessage(message1);
-                mWorkThread.mHandler.sendMessage(message2);
-                Intent intent3 = new Intent();
-                //包名 包名+类名（全路径）
-                intent3.setClassName("com.hexin.zhanghu", "com.hexin.zhanghu.main.WelcomeActivity");
-                startActivity(intent3);
+                LogUtil.i(Tag,"Click butto Time"+Calendar.getInstance().getTimeInMillis());
+                Message messageSleep = Message.obtain();
+                messageSleep.what = WorkHandler.MESSAGE_WHAT_SLEEP;
+                Message messageOutPutData = Message.obtain();
+                messageOutPutData.what = WorkHandler.MESSAGE_WHAT_OUT_PUT_DATA;
+                messageOutPutData.obj = new String("out put data");
+                mWorkThread.getWorkHandler().sendMessage(messageSleep);
+                mWorkThread.getWorkHandler().sendMessage(messageOutPutData);
+                LogUtil.i(Tag,"Called Send Time:"+ Calendar.getInstance().getTimeInMillis()+"Current Thread:"+Thread.currentThread());
                 break;
         }
     }

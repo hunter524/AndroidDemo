@@ -7,6 +7,7 @@ import java.util.concurrent.CountDownLatch;
  * Demo for  {@link Object#wait()}
  *           {@link Object#notify()}
  * And Thread state {@link java.lang.Thread.State}
+ * 对象也存在等待队列 如果调用对象的wait方法，则必须获得该对象的锁（即monitor）
  */
 
 public class ObjectWaitDemo {
