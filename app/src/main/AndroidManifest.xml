@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
+        android:name=".DemoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,8 +20,13 @@
         <activity
             android:name=".activity.SingleInstanceActivity"
             android:launchMode="singleInstance">
+            <intent-filter>
+                <action android:name="android.intent.action.Single"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
         </activity>
-        <activity android:name=".activity.ServiceDemoAct">
+        <activity android:name=".activity.ServiceDemoAct"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

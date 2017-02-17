@@ -6,12 +6,15 @@ import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import sun.misc.Unsafe;
+
 /**
  * Created by hunter on 2016/9/7.
  */
 public class Main {
 
     public static void main(String[] arg) throws UnsupportedEncodingException {
+        Unsafe.getUnsafe().addressSize();
         String original = "%u7ED9%u6211%u65F6%u5149%u673A93";
         String urldecode = EscapeUnescape.unescape(original);
         System.out.println(urldecode);

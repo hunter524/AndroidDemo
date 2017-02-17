@@ -1,11 +1,15 @@
 package com.github.hunter524.java.javaBase.practice;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
 /**
  * Created by hunter on 2016/10/11.
  */
 
 public class JavaBaseMain {
-    public static void main(){
+    public static void main(String[] arg){
         People people = new People(){
             @Override
             public String getName() {
@@ -17,9 +21,23 @@ public class JavaBaseMain {
 
         Students students = new Students();
         getPeople(students);
+//demo for transient 关键字
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("E://sutdent.txt");
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(students);
+            objectOutputStream.flush();
+            fileOutputStream.flush();
+            objectOutputStream.close();
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Teachers teachers = new Teachers();
         getPeople(teachers);
+
+
     }
     public static void getPeople(People people){
         System.out.println("getPeople people");

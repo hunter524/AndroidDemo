@@ -9,6 +9,8 @@ import android.provider.Settings;
 
 import com.github.hunter524.util.LogUtil;
 
+import java.util.Calendar;
+
 public class RemoteService extends Service {
     private final String TAG = "RemoteService";
     public RemoteService() {
@@ -47,12 +49,19 @@ public class RemoteService extends Service {
 
     private IRemoteService.Stub mBinde = new IRemoteService.Stub() {
         @Override
-        public int getPid() throws RemoteException {
+        public int getPid() throws RemoteException{
+//            调用线程会被阻塞死对其他无响应
+            LogUtil.i(TAG,Thread.currentThread()+ "start Time"+Calendar.getInstance().getTime());
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             return Process.myPid();
         }
 
         @Override
-        public RSDataBean getMyData() throws RemoteException {
+        public RSDataBean getMyData(int i) throws RemoteException {
             return new RSDataBean();
         }
     };

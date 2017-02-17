@@ -18,6 +18,8 @@ import com.github.hunter524.androiddemo.service.IRemoteService;
 import com.github.hunter524.androiddemo.service.RemoteService;
 import com.github.hunter524.util.LogUtil;
 
+import java.util.Calendar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,6 +44,29 @@ public class ServiceDemoAct extends Activity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             LogUtil.i(TAG, "onServiceConnected");
             mIRemoteService = IRemoteService.Stub.asInterface(service);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    LogUtil.i(TAG,Thread.currentThread()+"statr Time:"+ Calendar.getInstance().getTime());
+                    try {
+                        mIRemoteService.getPid();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                    LogUtil.i(TAG,Thread.currentThread()+"end Time:"+ Calendar.getInstance().getTime());
+                }
+            }).start();
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        mIRemoteService.getPid();
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
         }
 
         @Override
@@ -72,6 +97,8 @@ public class ServiceDemoAct extends Activity {
                 killRemoteService();
                 break;
             case R.id.get_pid:
+//                Intent intent = new Intent("android.intent.action.Single");
+//                startActivity(intent); // 隐式启动的Activity
                 int pid = 0;
                 try {
                     pid = mIRemoteService.getPid();

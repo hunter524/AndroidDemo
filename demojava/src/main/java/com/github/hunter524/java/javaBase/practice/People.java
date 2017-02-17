@@ -1,13 +1,18 @@
 package com.github.hunter524.java.javaBase.practice;
 
+import java.io.Serializable;
+
 /**
  * Created by hunter on 2016/10/11.
  */
-
-public interface People {
+//接口可以继承
+public interface People extends Serializable {
     public String getName();
 }
 class Students implements People {
+    public String name = "students";
+
+    public transient int  sex = 0;
     @Override
     public String getName() {
         return "Students";
