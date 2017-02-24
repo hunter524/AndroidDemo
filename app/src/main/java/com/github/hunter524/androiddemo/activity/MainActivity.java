@@ -3,6 +3,7 @@ package com.github.hunter524.androiddemo.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,12 @@ public class MainActivity extends Activity {
     Button mSingleInstanceBt;
     @BindView(R.id.Normal_bt)
     Button mNormalBt;
+
+
+
+
+
+
 
     private WorkThread mWorkThread;
     @Override
