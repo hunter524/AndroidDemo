@@ -35,4 +35,8 @@ public class PerformaceCmp {
         endTiem = System.nanoTime();
         DemoUtil.println("End New"+(endTiem-startTime)+"");
     }
+
+    public static void invokeMethodCmp(){
+
+    }
 }

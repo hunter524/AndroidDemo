@@ -21,16 +21,13 @@
             android:name=".activity.SingleInstanceActivity"
             android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="android.intent.action.Single"></action>
-                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="android.intent.action.Single"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ServiceDemoAct"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity android:name=".activity.ServiceDemoAct">
+
         </activity>
         <activity
             android:name=".activity.SingleTaskActivity"
@@ -39,10 +36,18 @@
 
         <service
             android:name=".service.RemoteService"
-            android:process=":remote"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:process=":remote">
         </service>
+
+        <activity android:name=".activity.HandlerAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

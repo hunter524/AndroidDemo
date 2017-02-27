@@ -18,28 +18,33 @@ android {
     }
     productFlavors {
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
-    apt('com.google.dagger:dagger-compiler:+', 'com.jakewharton:butterknife-compiler:8.4.0')
+    apt('com.google.dagger:dagger-compiler:+', 'com.jakewharton:butterknife-compiler:8.0.0')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //    单元测试依赖
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.1.4'
-    testCompile 'org.robolectric:shadows-multidex:3.1.4'
     //    testCompile "org.robolectric:shadows-support-v4:3.1.4"
     //    testCompile "org.mockito:mockito-core:2.+"
-    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
-    compile 'com.google.dagger:dagger:+'
-    compile 'com.jakewharton:butterknife:+'
-    compile 'io.reactivex:rxjava:1.2.4'
-    compile 'io.reactivex:rxandroid:+'
-    compile 'com.jakewharton.rxbinding:rxbinding:+'
-    compile 'com.squareup.retrofit2:retrofit:+'
-    compile 'com.squareup.picasso:picasso:+'
-    compile 'com.alibaba:fastjson:1.1.54.android'
-    compile 'com.squareup.okhttp3:okhttp:+'
     //    compile 'com.android.support:recyclerview-v7:24.2.1'
     //    compile files('libs/tbs_sdk_thirdapp_v2.3.0.1048_36801_sharewithdownload_obfs_20160829_200437.jar')
     compile project(':comutillib')
+    compile 'com.google.dagger:dagger:2.6'
+    compile 'com.jakewharton:butterknife:8.0.0'
+    compile 'io.reactivex:rxjava:1.2.4'
+    compile 'io.reactivex:rxandroid:+'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.alibaba:fastjson:1.1.54.android'
+    compile 'com.squareup.okhttp3:okhttp:+'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.1.4'
+    testCompile 'org.robolectric:shadows-multidex:3.1.4'
+    testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
 }
