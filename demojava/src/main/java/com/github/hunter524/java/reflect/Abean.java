@@ -9,6 +9,7 @@ public class Abean {
     private String name ;
     private String sex ;
     private String year;
+    private String skinColor;
 
     public String getName() {
         return name;
@@ -34,12 +35,21 @@ public class Abean {
         this.year = year;
     }
 
+    public String getSkinColor() {
+        return skinColor;
+    }
+
+    public void setSkinColor(String skinColor) {
+        this.skinColor = skinColor;
+    }
+
     @Override
     public String toString() {
         return "Abean{" +
                 "name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", year='" + year + '\'' +
+                ", skinColor='" + skinColor + '\'' +
                 '}';
     }
 }
