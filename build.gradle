@@ -22,6 +22,13 @@ allprojects {
         jcenter()
     }
 }
+ext {
+    minSdkVersion = 14
+    targetSdkVersion = 22
+    compileSdkVersion = 23
+    buildToolVersion = "25.0.0"
+    supportLibVersion = "23.4.0"
+}
 
 task clean(type: Delete) {
     delete rootProject.buildDir
