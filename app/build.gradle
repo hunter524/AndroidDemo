@@ -48,9 +48,14 @@ dependencies {
     compile "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
     compile "com.android.support:design:${rootProject.ext.supportLibVersion}"
     compile 'com.contrarywind:Android-PickerView:3.0.7'
+    // RecyclerView
+    compile ('com.alibaba.android:vlayout:1.0.2@aar') {
+        transitive = true
+    }
     testCompile 'junit:junit:4.12'
     testCompile 'org.robolectric:robolectric:3.1.4'
     testCompile 'org.robolectric:shadows-multidex:3.1.4'
     testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
 
+//    compile 'com.android.support.constraint:constraint-layout:+'
 }

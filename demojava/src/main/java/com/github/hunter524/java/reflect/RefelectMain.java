@@ -26,7 +26,7 @@ public class RefelectMain {
 //        ReflectApiDemo.copyAbean(abean2,abean1);
 //
 //        DemoUtil.println(abean1.toString());
-        GenericClass.main();
-
+//        GenericClass.main();
+        System.out.println(Abean.SubClass.A);
     }
 }

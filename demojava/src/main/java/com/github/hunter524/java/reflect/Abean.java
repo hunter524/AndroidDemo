@@ -52,4 +52,22 @@ public class Abean {
                 ", skinColor='" + skinColor + '\'' +
                 '}';
     }
+
+    public static class SuperClass{
+        public static int A = 123;
+    }
+
+    public interface ISuper1{
+        int A = 123;
+    }
+    public interface ISuper2 extends ISuper1{
+        int A = 123;
+    }
+    public static class SubClass extends SuperClass implements ISuper2{
+        public static int A = 123;
+        static {
+            A = 456;
+            System.out.println(A);
+        }
+    }
 }
