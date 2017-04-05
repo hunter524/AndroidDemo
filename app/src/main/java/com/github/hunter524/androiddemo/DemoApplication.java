@@ -5,6 +5,8 @@ import android.os.Process;
 
 import com.github.hunter524.util.LogUtil;
 
+import hugo.weaving.internal.Hugo;
+
 /**
  * Created by hunter on 2017/2/15.
  */

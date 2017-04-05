@@ -13,13 +13,14 @@ public class JavaBaseMain {
         People people = new People(){
             @Override
             public String getName() {
-                return "";
+                return "people";
             }
         };
 
         getPeople(people);
 
-        Students students = new Students();
+        People students = new Students();
+//        重载 与指针有关 与实例的对象类型无关。
         getPeople(students);
 //demo for transient 关键字
         try {

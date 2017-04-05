@@ -32,4 +32,6 @@ dependencies {
     })
 //    compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
+    compile 'com.jakewharton.hugo:hugo-annotations:1.2.1'
+    compile 'com.jakewharton.hugo:hugo-annotations:1.2.1'
 }

@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.jakewharton.hugo'
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolVersion
@@ -10,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -22,7 +24,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
+
 }
+
 
 dependencies {
     apt('com.google.dagger:dagger-compiler:+', 'com.jakewharton:butterknife-compiler:8.0.0')
@@ -36,7 +40,7 @@ dependencies {
     compile 'com.google.dagger:dagger:2.6'
     compile 'com.jakewharton:butterknife:8.0.0'
     compile 'io.reactivex:rxjava:1.2.4'
-    compile 'io.reactivex:rxandroid:+'
+    compile 'io.reactivex:rxandroid:1.1.0'
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
@@ -48,8 +52,10 @@ dependencies {
     compile "com.android.support:support-v4:${rootProject.ext.supportLibVersion}"
     compile "com.android.support:design:${rootProject.ext.supportLibVersion}"
     compile 'com.contrarywind:Android-PickerView:3.0.7'
+    compile 'org.jsoup:jsoup:1.10.2'
+//    compile 'com.android.support.constraint:constraint-layout:+'
     // RecyclerView
-    compile ('com.alibaba.android:vlayout:1.0.2@aar') {
+    compile('com.alibaba.android:vlayout:1.0.2@aar') {
         transitive = true
     }
     testCompile 'junit:junit:4.12'
@@ -57,5 +63,6 @@ dependencies {
     testCompile 'org.robolectric:shadows-multidex:3.1.4'
     testCompile 'org.khronos:opengl-api:gl1.1-android-2.1_r1'
 
-//    compile 'com.android.support.constraint:constraint-layout:+'
+
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

@@ -10,6 +10,7 @@ public interface People extends Serializable {
     public String getName();
 }
 class Students implements People {
+    public static int staticI = 2;
     public String name = "students";
 
     public transient int  sex = 0;
