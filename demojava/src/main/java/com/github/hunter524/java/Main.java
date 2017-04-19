@@ -2,10 +2,12 @@ package com.github.hunter524.java;
 
 
 import com.github.hunter524.java.Collections.ComparatorDemo;
+import com.github.hunter524.java.concurrent.CyclicBarrierDemo;
 import com.github.hunter524.java.javaBase.practice.JavaBaseMain;
 
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Array;
+import java.util.concurrent.CyclicBarrier;
 
 /**
  * Created by hunter on 2016/9/7.
@@ -16,13 +18,13 @@ public class Main {
     public static void main(String[] arg) throws UnsupportedEncodingException {
 //        AnnotationMain.main();
 //        ThreadMain.main();
-        JavaBaseMain.main(new String[]{"c","a"});
+//        JavaBaseMain.main(new String[]{"c","a"});
 //        RxJava.main();
 //        PatternMain.main();
 //        Votatile.main();
 //        ThreadMain.main();
 //        CloneMain.main();
-        ComparatorDemo.demo();
+//        ComparatorDemo.demo();
 //        局部变量未被赋值则不可以使用
 //        int a;
 //        System.out.println(a);
@@ -33,6 +35,8 @@ public class Main {
 //            System.out.println(i);
 //        }
 //        new Main().println();
+        CyclicBarrierDemo cyclicBarrierDemo = new CyclicBarrierDemo();
+        cyclicBarrierDemo.startNormalBarrier();
     }
 
     public void println(){
