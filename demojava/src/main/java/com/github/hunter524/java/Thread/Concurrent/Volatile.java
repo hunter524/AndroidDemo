@@ -4,7 +4,7 @@ package com.github.hunter524.java.Thread.Concurrent;
  * Created by hunter on 2017/3/10.
  */
 
-public class Votatile {
+public class Volatile {
     public static Long i = Long.MIN_VALUE;
     public static void main(){
         new Thread(new Runnable() {

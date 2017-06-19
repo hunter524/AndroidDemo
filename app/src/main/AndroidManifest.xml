@@ -16,6 +16,10 @@
         android:theme="@style/Theme.AppCompat"
         android:supportsRtl="true">
         <activity android:name=".activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".activity.TencentX5Activity"/>
         <activity
@@ -27,7 +31,8 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ServiceDemoAct">
+        <activity android:name=".activity.ServiceDemoAct"
+            android:process=":remote">
 
         </activity>
         <activity
@@ -38,16 +43,13 @@
         <service
             android:name=".service.RemoteService"
             android:enabled="true"
-            android:exported="true"
+            android:exported="false"
             android:process=":remote">
         </service>
+        <service android:name=".service.MainLocalService"/>
 
         <activity android:name=".activity.HandlerAct">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
     </application>
 

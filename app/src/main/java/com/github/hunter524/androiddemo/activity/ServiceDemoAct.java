@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.github.hunter524.androiddemo.R;
 import com.github.hunter524.androiddemo.service.IRemoteService;
+import com.github.hunter524.androiddemo.service.MainLocalService;
 import com.github.hunter524.androiddemo.service.RemoteService;
 import com.github.hunter524.util.LogUtil;
 
@@ -115,7 +116,7 @@ public class ServiceDemoAct extends Activity {
      */
     private void bindRemoteService() {
         LogUtil.i(TAG, "[ClientActivity] bindRemoteService");
-        Intent intent = new Intent(ServiceDemoAct.this, RemoteService.class);
+        Intent intent = new Intent(ServiceDemoAct.this, MainLocalService.class);
         intent.setAction(IRemoteService.class.getName());
         bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
 //

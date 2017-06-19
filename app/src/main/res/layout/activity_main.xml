@@ -32,4 +32,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Normal_bt"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start_service_activity_in_remote"
+        android:id="@+id/start_rmote_act"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start_local_service"
+        android:id="@+id/start_local_service"/>
 </LinearLayout>

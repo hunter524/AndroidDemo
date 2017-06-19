@@ -1,17 +1,23 @@
 package com.github.hunter524.androiddemo.activity;
 
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.github.hunter524.androiddemo.Handler.WorkHandler;
 import com.github.hunter524.androiddemo.Handler.WorkThread;
 import com.github.hunter524.androiddemo.R;
+import com.github.hunter524.androiddemo.service.MainLocalService;
 import com.github.hunter524.util.LogUtil;
 
 import java.util.Calendar;
@@ -55,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
 
-    @OnClick({R.id.single_task_bt, R.id.single_instance_bt, R.id.Normal_bt,R.id.button})
+    @OnClick({R.id.single_task_bt, R.id.single_instance_bt, R.id.Normal_bt,R.id.button,R.id.start_rmote_act})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.single_task_bt:
@@ -81,6 +87,22 @@ public class MainActivity extends AppCompatActivity {
                 mWorkThread.getWorkHandler().sendMessage(messageOutPutData);
                 LogUtil.i(Tag,"Called Send Time:"+ Calendar.getInstance().getTimeInMillis()+"Current Thread:"+Thread.currentThread());
                 break;
+            case  R.id.start_rmote_act:
+                Intent intent3 = new Intent(this,ServiceDemoAct.class);
+                startActivity(intent3);
+                break;
+            case R.id.start_local_service:
+                Intent intent4 = new Intent(this, MainLocalService.class);
+                startService(intent4);
+                bindService(intent4, new ServiceConnection() {
+                    @Override public void onServiceConnected(ComponentName name, IBinder service) {
+                        Log.d(Tag,"name"+name+"service"+service);
+                    }
+
+                    @Override public void onServiceDisconnected(ComponentName name) {
+                        Log.d(Tag,"name"+name);
+                    }
+                }, Context.BIND_AUTO_CREATE);
         }
     }
 }

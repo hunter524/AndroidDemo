@@ -2,6 +2,7 @@ package com.github.hunter524.java;
 
 
 import com.github.hunter524.java.Collections.ComparatorDemo;
+import com.github.hunter524.java.Thread.Lock.ReentranteLockDemo;
 import com.github.hunter524.java.concurrent.CyclicBarrierDemo;
 import com.github.hunter524.java.javaBase.practice.JavaBaseMain;
 
@@ -35,8 +36,9 @@ public class Main {
 //            System.out.println(i);
 //        }
 //        new Main().println();
-        CyclicBarrierDemo cyclicBarrierDemo = new CyclicBarrierDemo();
-        cyclicBarrierDemo.startNormalBarrier();
+//        CyclicBarrierDemo cyclicBarrierDemo = new CyclicBarrierDemo();
+//        cyclicBarrierDemo.startNormalBarrier();
+        ReentranteLockDemo.main();
     }
 
     public void println(){
