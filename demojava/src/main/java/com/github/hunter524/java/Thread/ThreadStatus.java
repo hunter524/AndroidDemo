@@ -9,11 +9,10 @@ import java.util.concurrent.Executors;
 
 public class ThreadStatus {
     public static void main(){
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Thread thread = new Thread(()->{
-
-        });
-        e
+        //ExecutorService executorService = Executors.newSingleThreadExecutor();
+        //Thread thread = new Thread(()->{
+        //
+        //});
 
     }
 }

@@ -1,13 +1,11 @@
 package com.github.hunter524.java.socket;
 
-import dagger.Binds;
-import dagger.Module;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.net.SocketAddress;
-import java.net.UnknownHostException;
-import javax.inject.Inject;
 
 /**
  * Created by hunter on 2017/7/6.
@@ -22,13 +20,29 @@ public class SocketClient {
     //} catch (UnknownHostException e) {
     //  e.printStackTrace();
     //}
-    Module annotation =SocketClient.class.getAnnotation(Module.class);
-    Class<?>[] includes = annotation.includes();
-    Class<SocketClient> socketClientClass = SocketClient.class;
+    Socket socket = null;
+    InputStream inputStream = null;
     try {
-      Socket socket1 = new Socket("localhost", 542);
+      socket = new Socket("localhost", 542);
+     inputStream = socket.getInputStream();
     } catch (IOException e) {
       e.printStackTrace();
+    }
+
+    while (true){
+      try {
+        //InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+        //BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        //System.out.println(bufferedReader.readLine());
+        //IO读取不到数据会阻塞线程
+        //也可以这么读 每次获取一个char
+        char read = (char) inputStream.read();
+        System.out.print(read);
+        int available = inputStream.available();
+        System.out.println("available :"+available);
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
   }
 }

@@ -1,8 +1,10 @@
 package com.github.hunter524.java.socket;
 
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
@@ -35,6 +37,7 @@ public class SocketServer {
     while (true){
       try {
         Socket accept = serverSocket.accept();
+        System.out.println(accept.getInetAddress().toString());
         new SocketServerThread(accept).start();
       } catch (IOException e) {
         e.printStackTrace();
@@ -55,16 +58,18 @@ public class SocketServer {
       OutputStreamWriter outputStreamWriter = null;
       try {
         outputStream = mSocket.getOutputStream();
-        outputStreamWriter= new OutputStreamWriter(outputStream,"utf-8");
-      } catch (UnsupportedEncodingException e) {
-        e.printStackTrace();
       } catch (IOException e) {
         e.printStackTrace();
       }
       while (true){
         try {
+          outputStreamWriter= new OutputStreamWriter(outputStream,"utf-8");
+          PrintWriter printWriter = new PrintWriter(outputStreamWriter);
+          String outs = Thread.currentThread().getName() + "current Time:" + System.currentTimeMillis();
+          System.out.println(outs);
+          printWriter.println(outs);
+          printWriter.flush();
           Thread.sleep(2000);
-          outputStreamWriter.write(System.currentTimeMillis()+"ThreadName"+Thread.currentThread().getName());
         } catch (InterruptedException e) {
           e.printStackTrace();
         } catch (IOException e) {
